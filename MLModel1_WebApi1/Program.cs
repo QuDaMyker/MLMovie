@@ -6,14 +6,13 @@ using Microsoft.OpenApi.Models;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
-using MLModel_WebApi1;
-using System.Collections.Generic;
+using MLModel1_WebApi1;
 
 // Configure app
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddPredictionEnginePool<MLModel.ModelInput, MLModel.ModelOutput>()
-    .FromFile("MLModel.zip");
+builder.Services.AddPredictionEnginePool<MLModel1.ModelInput, MLModel1.ModelOutput>()
+    .FromFile("MLModel1.zip");
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
@@ -31,11 +30,8 @@ app.UseSwaggerUI(c =>
 
 // Define prediction route & handler
 app.MapPost("/predict",
-    async (PredictionEnginePool<MLModel.ModelInput, MLModel.ModelOutput> predictionEnginePool, MLModel.ModelInput input) =>
+    async (PredictionEnginePool<MLModel1.ModelInput, MLModel1.ModelOutput> predictionEnginePool, MLModel1.ModelInput input) =>
         await Task.FromResult(predictionEnginePool.Predict(input)));
-
-
-
 
 // Run app
 app.Run();

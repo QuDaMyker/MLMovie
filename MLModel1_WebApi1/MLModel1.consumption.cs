@@ -5,10 +5,10 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-public partial class MLModel
+public partial class MLModel1
 {
     /// <summary>
-    /// model input class for MLModel.
+    /// model input class for MLModel1.
     /// </summary>
     #region model input class
     public class ModelInput
@@ -78,7 +78,7 @@ public partial class MLModel
     #endregion
 
     /// <summary>
-    /// model output class for MLModel.
+    /// model output class for MLModel1.
     /// </summary>
     #region model output class
     public class ModelOutput
@@ -132,13 +132,13 @@ public partial class MLModel
         public string Release_date { get; set; }
 
         [ColumnName(@"title")]
-        public uint Title { get; set; }
+        public string Title { get; set; }
 
         [ColumnName(@"video")]
         public string Video { get; set; }
 
         [ColumnName(@"vote_average")]
-        public string Vote_average { get; set; }
+        public uint Vote_average { get; set; }
 
         [ColumnName(@"vote_count")]
         public string Vote_count { get; set; }
@@ -150,7 +150,7 @@ public partial class MLModel
 
     #endregion
 
-    private static string MLNetModelPath = Path.GetFullPath("MLModel.zip");
+    private static string MLNetModelPath = Path.GetFullPath("MLModel1.zip");
 
     public static readonly Lazy<PredictionEngine<ModelInput, ModelOutput>> PredictEngine = new Lazy<PredictionEngine<ModelInput, ModelOutput>>(() => CreatePredictEngine(), true);
 

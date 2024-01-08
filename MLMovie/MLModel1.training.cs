@@ -8,9 +8,9 @@ using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
 using Microsoft.ML;
 
-namespace MLModel_WebApi1
+namespace MLMovie
 {
-    public partial class MLModel
+    public partial class MLModel1
     {
         /// <summary>
         /// Retrains model using the pipeline generated as part of the training process. For more information on how to load data, see aka.ms/loaddata.
@@ -35,8 +35,8 @@ namespace MLModel_WebApi1
         {
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"overview",inputColumnName:@"overview")      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"title",inputColumnName:@"title"))      
-                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"id",MatrixColumnIndexColumnName=@"title",MatrixRowIndexColumnName=@"overview",ApproximationRank=10,LearningRate=0.00752754309931459,NumberOfIterations=9679,Quiet=true}));
+                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"vote_average",inputColumnName:@"vote_average"))      
+                                    .Append(mlContext.Recommendation().Trainers.MatrixFactorization(new MatrixFactorizationTrainer.Options(){LabelColumnName=@"id",MatrixColumnIndexColumnName=@"vote_average",MatrixRowIndexColumnName=@"overview",ApproximationRank=10,LearningRate=0.492062149570147,NumberOfIterations=1028,Quiet=true}));
 
             return pipeline;
         }

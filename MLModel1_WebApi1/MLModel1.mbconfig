@@ -139,7 +139,7 @@
       },
       {
         "ColumnName": "title",
-        "ColumnPurpose": "User",
+        "ColumnPurpose": "Feature",
         "ColumnDataFormat": "String",
         "IsCategorical": false,
         "Type": "Column",
@@ -155,7 +155,7 @@
       },
       {
         "ColumnName": "vote_average",
-        "ColumnPurpose": "Feature",
+        "ColumnPurpose": "User",
         "ColumnDataFormat": "String",
         "IsCategorical": false,
         "Type": "Column",
@@ -183,71 +183,43 @@
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": 0.98520480904708729,
-        "RuntimeInSeconds": 1.1089999675750732
+        "Score": 0.99969366858013531,
+        "RuntimeInSeconds": 1.6349999904632568
       },
       {
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": 0.99973646684837691,
-        "RuntimeInSeconds": 0.31099998950958252
+        "Score": 0.99999967775322351,
+        "RuntimeInSeconds": 1.5349999666213989
       },
       {
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -9.1728458308587815,
-        "RuntimeInSeconds": 0.13699999451637268
+        "Score": 0.9999999999999073,
+        "RuntimeInSeconds": 6.2350001335144043
       },
       {
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -1.2600471287552446E+23,
-        "RuntimeInSeconds": 1.1629999876022339
+        "Score": 0.99999999999963063,
+        "RuntimeInSeconds": 6.8920001983642578
       },
       {
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -9.1458311274893749,
-        "RuntimeInSeconds": 0.37799999117851257
+        "Score": 0.9999999999999073,
+        "RuntimeInSeconds": 7.254000186920166
       },
       {
         "Version": 0,
         "Type": "Trial",
         "TrainerName": "MatrixFactorization",
-        "Score": -1.1494385712972227E+37,
-        "RuntimeInSeconds": 0.2669999897480011
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": 0.99999177422978192,
-        "RuntimeInSeconds": 1.468999981880188
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": 0.46239392188856054,
-        "RuntimeInSeconds": 40.477001190185547
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": 0.99981466615611592,
-        "RuntimeInSeconds": 0.17000000178813934
-      },
-      {
-        "Version": 0,
-        "Type": "Trial",
-        "TrainerName": "MatrixFactorization",
-        "Score": 0.999999999584423,
-        "RuntimeInSeconds": 42.525001525878906
+        "Score": 0.86930581795778172,
+        "RuntimeInSeconds": 0.56099998950958252
       }
     ],
     "Pipeline": {
@@ -257,16 +229,16 @@
           "InputColumnName": "overview"
         },
         "1": {
-          "OutputColumnName": "title",
-          "InputColumnName": "title"
+          "OutputColumnName": "vote_average",
+          "InputColumnName": "vote_average"
         },
         "2": {
           "LabelColumnName": "id",
-          "MatrixColumnIndexColumnName": "title",
+          "MatrixColumnIndexColumnName": "vote_average",
           "MatrixRowIndexColumnName": "overview",
           "ApproximationRank": 10,
-          "LearningRate": 0.0075275430993145855,
-          "NumberOfIterations": 9679,
+          "LearningRate": 0.49206214957014727,
+          "NumberOfIterations": 1028,
           "Quiet": true
         }
       },
